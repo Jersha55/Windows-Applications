@@ -1,0 +1,90 @@
+import java.awt.*;
+import java.awt.event.*;
+class arth extends Frame implements ActionListener {
+TextField t1, t2, t3;
+Button b1, b2, b3, b4;
+public static void main(String args[]) {
+arth f = new arth();
+f.setTitle("ARITHMETIC");
+f.setSize(500, 400);
+f.setVisible(true);
+}
+arth() {
+this.setLayout(null);
+this.setBackground(new Color(28, 107, 160));
+Panel p1 = new Panel();
+Label l1 = new Label("ARITHMETIC OPERATION");
+p1.setBackground(Color.PINK);
+Font f = new Font("Arial", Font.BOLD, 22);
+l1.setFont(f);
+p1.add(l1);
+this.add(p1);
+p1.setBounds(80, 30, 300, 50);
+Label l2 = new Label("First Number");
+Label l3 = new Label("Second Number");
+Label l4 = new Label("Result");
+t1 = new TextField(20);
+t2 = new TextField(20);
+t3 = new TextField(20);
+b1 = new Button("ADD");
+b1.setBackground(Color.GREEN);
+b2 = new Button("SUB");
+b2.setBackground(Color.WHITE);
+b3 = new Button("MUL");
+b3.setBackground(Color.YELLOW);
+b4 = new Button("DIV");
+b4.setBackground(Color.ORANGE);
+this.add(l2); this.add(t1);
+this.add(l3); this.add(t2);
+this.add(l4); this.add(t3);
+this.add(b1); this.add(b2); this.add(b3); this.add(b4);
+l2.setBounds(60, 100, 150, 30);
+t1.setBounds(200, 100, 150, 30);
+l3.setBounds(60, 150, 150, 30);
+t2.setBounds(200, 150, 150, 30);
+l4.setBounds(60, 200, 150, 30);
+t3.setBounds(200, 200, 150, 30);
+b1.setBounds(60, 250, 90, 30);
+b2.setBounds(160, 250, 90, 30);
+b3.setBounds(260, 250, 90, 30);
+b4.setBounds(360, 250, 90, 30);
+b1.addActionListener(this);
+b2.addActionListener(this);
+b3.addActionListener(this);
+b4.addActionListener(this);
+}
+public void actionPerformed(ActionEvent ae) {
+if (ae.getSource() == b1) {
+String a1 = t1.getText();
+String a2 = t2.getText();
+int a = Integer.parseInt(a1);
+int b = Integer.parseInt(a2);
+int c = a + b;
+t3.setText("" + c);
+}
+if (ae.getSource() == b2) {
+String a1 = t1.getText();
+String a2 = t2.getText();
+int a = Integer.parseInt(a1);
+int b = Integer.parseInt(a2);
+ int c = a - b;
+t3.setText("" + c);
+}
+if (ae.getSource() == b3) {
+String a1 = t1.getText();
+ String a2 = t2.getText();
+   int a = Integer.parseInt(a1);
+int b = Integer.parseInt(a2);
+int c = a * b;
+t3.setText("" + c);
+}
+if (ae.getSource() == b4) {
+String a1 = t1.getText();
+String a2 = t2.getText();
+int a = Integer.parseInt(a1);
+int b = Integer.parseInt(a2);
+int c = a / b;
+t3.setText("" + c);
+}
+}
+}
